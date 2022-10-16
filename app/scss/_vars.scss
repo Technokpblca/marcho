@@ -8,7 +8,7 @@ $bg: #f6f6f6;
   font-weight: 400;
 }
 
-%quicksand-500 {
+%quicksand-500{
   font-family: 'Quicksand-Medium', sans-serif;
   font-weight: 500;
 }
@@ -18,12 +18,20 @@ $bg: #f6f6f6;
   font-weight: 400;
 }
 
-%roboto-500 {
+%roboto-500{
   font-family: 'Roboto-Medium', sans-serif;
   font-weight: 500;;
 }
 
-%roboto-700 {
+%roboto-700{
   font-family: 'Roboto-Bold', sans-serif;
   font-weight: 700;
+}
+
+%btn{
+  text-transform: uppercase;
+  color: #fff;
+  @extend %roboto-400;
+  background-color: $accent;
+  box-shadow: 0px 7px 20px 0px rgba(255, 17, 48, 0.3);
 }

@@ -1,6 +1,7 @@
 @import 'vars';
 @import 'fonts';
 @import 'reset';
+@import 'libs';
 @import 'global';
 @import 'media';
 
@@ -25,7 +26,7 @@
   &__list-link{
     color: $title;
     @extend %roboto-400;
-    padding-bottom: 4px;
+    padding: 0 2px 4px;
     transition: all .3s;
     &:hover{
       color: $accent;
@@ -140,13 +141,10 @@
     }
   }
   &__btn{
-    background-color: $accent;
+    @extend %btn;
     cursor: pointer;
     border: none;
-    text-transform: uppercase;
-    color: #fff;
     padding: 12px 22px;
-    box-shadow: 0px 7px 20px 0px rgba(255, 17, 48, 0.3);
   }
 }
 
@@ -161,5 +159,81 @@
     display: inline;
     vertical-align: middle;
     margin-left: 25px;
+  }
+}
+
+
+/* Slider
+=========================*/
+.top-slider{
+  background-image: url(../images/top-slider-bg.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: $bg;
+  padding: 65px 0 45px;
+  &__container{
+    max-width: 1560px;
+  }
+  &__item{
+    display: flex !important;
+    justify-content: space-between;
+  }
+  &__content{
+    padding-left: 165px;
+    padding-top: 125px;
+  }
+  &__title{
+    max-width: 570px;
+    @extend %roboto-700;
+    color: $title;
+    font-size: 58px;
+    line-height: 68px;
+    margin-bottom: 35px;
+  }
+  &__text{
+    max-width: 470px;
+    margin-bottom: 55px;
+  }
+  &__link{
+    @extend %btn;
+    padding: 12px 35px;
+  }
+  .slick-dots{
+    display: flex;
+    justify-content: center;
+    margin-top: -70px;
+    li{
+      padding: 0 5px;
+      line-height: 0;
+      button{
+        padding: 0;
+        font-size: 0;
+        background-color: transparent;
+        width: 26px;
+        height: 26px;
+        border: 1px solid transparent;
+        border-radius: 50%;
+        position: relative;
+        &::before{
+          position: absolute;
+          content: '';
+          width: 6px;
+          height: 6px;
+          border-radius: 50%;
+          background-color: $default;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+      }
+      &.slick-active{
+        button{
+          border-color: $accent;
+          &::before{
+            background-color: $accent;
+          }
+        }
+      }
+    }
   }
 }
