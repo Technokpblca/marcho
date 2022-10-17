@@ -401,3 +401,121 @@
     padding: 16px 28px;
   }
 }
+
+
+/* Products
+=========================*/
+.products{
+  padding: 105px 0 120px;
+  text-align: center;
+  &__link{
+    text-transform: uppercase;
+    display: inline-block;
+    @extend %roboto-400;
+    color: $title;
+    padding: 15px 30px;
+    border: 1px solid $accent;
+    margin-top: 55px;
+  }
+  &__items{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 45px 30px;
+  }
+}
+
+.products-item{
+  max-width: 370px;
+  &__inner{
+    position: relative;
+    height: 370px;
+    overflow: hidden;
+    margin-bottom: 25px;
+  }
+  &__img{
+    object-fit: cover;
+  }
+  &__link-box{
+    transition: all .3s;
+    position: absolute;
+    bottom: 50px;
+    left: 0;
+    right: 0;
+    background-color: #fff;
+    border-radius: 22px;
+    width: 220px;
+    height: 50px;
+    margin: 0 auto;
+    box-shadow: 0px 5px 30px 0px rgba(152, 152, 152, 0.2);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    transform: translateY(500%);
+  }
+  &__link--line::after,
+  &__link--line::before{
+    position: absolute;
+    content: '';
+    background-color: #ececec;
+    width: 1px;
+    height: 30px;
+    top: 10px;
+  }
+  &__link--line::after{
+    left: 70px;
+  }
+  &__link--line::before{
+    right: 70px;
+  }
+  &__link{
+    display: inherit;
+    path{
+      transition: all .3s;
+    }
+    &:hover{
+      path{
+        fill: $accent;
+      }
+    }
+  }
+  &:hover{
+    .products-item__link-box{
+      transform: translateY(0);
+    }
+  }
+  &__title{
+    @extend %roboto-400;
+    color: $title;
+    font-size: 22px;
+    padding: 15px 0;
+  }
+  &__price{
+    display: flex;
+    justify-content: center;
+    // margin-bottom: 45px;
+  }
+  &__new-price{
+    margin-right: 20px;
+    @extend %roboto-500;
+    color: $title;
+  }
+  &__old-price{
+    @extend %roboto-400;
+    color: #ccccce;
+    text-decoration-line: line-through;
+  }
+  &--sale{
+    .products-item__inner::before{
+      position: absolute;
+      content: 'SALE';
+      @extend %btn;
+      left: 25px;
+      top: 25px;
+      padding: 2px 11px;
+    } 
+  }
+}
+
+.stars{
+  margin: 0 auto;
+}
