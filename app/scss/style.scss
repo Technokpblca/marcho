@@ -707,17 +707,6 @@
 .breadcrumbs{
   display: flex;
   justify-content: center;
-  padding-left: 25px;
-  position: relative;
-  &::before{
-    position: absolute;
-    content: '';
-    width: 16px;
-    height: 16px;
-    background-image: url(../images/icons/home.svg);
-    top: 3px;
-    left: 510px;
-  }
   &__list{
     display: flex;
   }
@@ -767,6 +756,7 @@
   }
   &__link--active{
     color: $accent;
+    @extend %roboto-700;
   }
   &__label{
     margin-bottom: 30px;
@@ -781,6 +771,9 @@
     outline: none;
     padding: 0 20px;
     margin-top: 4px;
+  }
+  &__text{
+    margin-bottom: 30px;
   }
   &__label-checkbox{
     margin-bottom: 15px;
