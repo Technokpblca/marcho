@@ -682,3 +682,123 @@
     }
   }
 }
+
+
+/* Top
+=========================*/
+.top{
+  &__container{
+    padding: 130px 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    max-width: 1700px;
+    margin: 0 auto;
+  }
+  &__title{
+    text-align: center;
+    @extend %roboto-400;
+    color: $title;
+    text-transform: uppercase;
+    font-size: 48px;
+    margin-bottom: 25px;
+  }
+}
+
+.breadcrumbs{
+  display: flex;
+  justify-content: center;
+  padding-left: 25px;
+  position: relative;
+  &::before{
+    position: absolute;
+    content: '';
+    width: 16px;
+    height: 16px;
+    background-image: url(../images/icons/home.svg);
+    top: 3px;
+    left: 510px;
+  }
+  &__list{
+    display: flex;
+  }
+  &__item{
+    color: #727272;
+    padding-right: 40px;
+    position: relative;
+    &::before{
+      position: absolute;
+      content: '';
+      width: 9px;
+      height: 10px;
+      background-image: url(../images/icons/double-arrow.svg);
+      right: 15px;
+      top: 10px;
+    }
+    &:last-child{
+      color: $accent;
+      padding-right: 0;
+      &::before{
+        display: none;
+      }
+    }
+  }
+  &__link{
+    color: inherit;
+  }
+}
+
+
+/* Modal
+=========================*/
+.modal{
+  padding: 115px 0;
+  max-width: 570px;
+  margin: 0 auto;
+  &__links{
+    margin-bottom: 50px;
+    text-align: center;
+  }
+  &__link{
+    color: #909090;
+    @extend %roboto-400;
+    font-size: 22px;
+    text-transform: uppercase;
+    margin: 0 25px;
+  }
+  &__link--active{
+    color: $accent;
+  }
+  &__label{
+    margin-bottom: 30px;
+    display: block;
+  }
+  &__input{
+    display: block;
+    width: 100%;
+    height: 60px;
+    background-color: $bg;
+    border: none;
+    outline: none;
+    padding: 0 20px;
+    margin-top: 4px;
+  }
+  &__label-checkbox{
+    margin-bottom: 15px;
+    display: block;
+  }
+  &__btn{
+    display: block;
+    width: 100%;
+    @extend %roboto-400;
+    color: #fff;
+    text-transform: uppercase;
+    background-color: #292929;
+    border: none;
+    cursor: pointer;
+    padding: 17px 0;
+    margin-bottom: 15px;
+  }
+  &__error{
+    color: $accent;
+  }
+}
