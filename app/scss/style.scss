@@ -1836,7 +1836,150 @@
 }
 
 
-
+/* Blog-single
+=========================*/
+.blog-single{
+  &__img{
+    width: 770px;
+    height: 480px;
+    object-fit: cover;
+  }
+  &__text{
+    margin-bottom: 25px;
+    h4{
+      @extend %roboto-500;
+      color: $title;
+      font-size: 22px;
+      margin-bottom: 25px;
+    }
+    p{
+      margin-bottom: 25px;
+      &:last-child{
+        margin-bottom: 0;
+      }
+    }
+    blockquote{
+      border-left: 3px solid $accent;
+      background-color: $bg;
+      padding: 35px;
+      height: 165px;
+      @extend %roboto-400;
+      color: $title;
+      font-size: 22px;
+      margin-bottom: 30px;
+    }
+    border: 1px solid #ececec;
+    border-top: none;
+    padding: 30px;
+  }
+  &__info{
+    display: flex;
+    margin-bottom: 25px;
+  }
+  &__info-link{
+    padding-left: 25px;
+    margin-right: 25px;
+    position: relative;
+    &::before{
+      position: absolute;
+      content: '';
+      width: 16px;
+      height: 16px;
+      left: 0;
+      top: 2px;
+      background-image: url(../images/icons/calendar.svg);
+    }
+  }
+  &__info-link--comment::before{
+    background-image: url(../images/icons/comment.svg);
+  }
+  &__info-link--author::before{
+    background-image: url(../images/icons/user-blog.svg);
+  }
+  &__info-img{
+    float: left;
+    margin-right: 30px;
+    margin-bottom: 10px;
+    width: 340px;
+    height: 270px;
+    object-fit: cover;
+  }
+  &__form-title{
+    text-transform: uppercase;
+    @extend %roboto-700;
+    color: $title;
+    font-size: 24px;
+    margin-bottom: 20px;
+    border-top: 1px solid #ececec;
+    padding-top: 35px;
+  }
+  &__form-text,
+  &__form-email{
+    width: 370px;
+    border: 1px solid #f0f0f0;
+    outline: none;
+    padding: 11px 15px;
+    margin-bottom: 30px;
+    &::placeholder{
+      color: $default;
+    }
+  }
+  .comments__form{
+    border-bottom: none;
+  }
+  &__box{
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__tags,
+  &__social{
+    @extend %roboto-500;
+    color: $title;
+  }
+  &__social{
+    margin-right: 10px;
+  }
+  &__social-link{
+    margin: 0 5px;
+    vertical-align: middle;
+    path{
+      fill: #727272;
+      transition: all .3s;
+    }
+    &:hover{
+      path{
+        fill: $accent;
+      }
+    }
+  }
+  &__author{
+    display: flex;
+    padding-bottom: 40px;
+    border-bottom: 1px solid #ececec;
+    margin-bottom: 40px;
+  }
+  &__author-img{
+    margin-right: 30px;
+    width: 140px;
+    height: 140px;
+    object-fit: cover
+  }
+  &__author-title{
+    @extend %roboto-500;
+    color: $title;
+    font-size: 22px;
+    margin-bottom: 20px;
+  }
+  &__comments-title{
+    @extend %roboto-700;
+    color: $title;
+    font-size: 24px;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+  }
+}
 
 
 
